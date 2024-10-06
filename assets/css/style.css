@@ -1,0 +1,5 @@
+.purple-gradient {
+    font-size: 50;
+    background: #7c4dff;
+    background: linear-gradient(180deg, #7c4dff 0%, #220061 100%);
+}
