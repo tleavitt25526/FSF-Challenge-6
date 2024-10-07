@@ -36,6 +36,12 @@ hr {
     text-align: center;
 }
 
+img {
+    max-height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
 .purple-gradient {
     background: #7c4dff;
     background: linear-gradient(180deg, #7c4dff 0%, #220061 100%);
@@ -131,10 +137,6 @@ hr {
     flex-wrap: wrap;
 }
 
-.city-forecast>h3 {
-    flex-basis: 100%;
-}
-
 .weather-box {
     background-color: #220061;
     width: 25vh;
@@ -144,6 +146,10 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.weather-box>* {
+    margin: 1vh;
 }
 
 #forecast-container {
