@@ -1,9 +1,8 @@
-import example from './assets/json/example.JSON';
-
 const searchButton = document.getElementById("search-button");
 const searchInput = document.getElementById("city");
 const historyUl = document.getElementById("history-ul");
 const cityDetails = document.getElementById("cityDetails").children;
+const forecastContainer = document.getElementById("forecast-container");
 
 localStorage.setItem("searchHistory", null);
 const historyArray = localStorage.getItem("items")
@@ -29,30 +28,46 @@ function storeLocalData(content, limit) {
   localStorage.setItem("searchHistory", JSON.stringify(historyArray));
 }
 
-// used for today section
-function createReport() {
-    const title = cityDetails[0];
-    const list = cityDetails[1];
-    const data = JSON.parse(example);
-    title.textContent = example
+const getApiWeather = function (lat, lon) {
+  // IF API KEY ACTUALLY WORKED
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat={${lat}}&lon={${lon}}&appid={f4e517e38960c65a47458e06fd53538a}`;
+  // fetch(apiUrl).then(function (response) {
+  //   if (response.ok) {
+  //     response.json().then(function (data) {
+  //       displayWeather(data);
+  //     });
+  //   } else {
+  //     console.log("not okay");
+  //   }
+  // });
+
+  // Using example json the weather website provided
+  const examplePath = "./assets/json/example.JSON";
+  fetch(examplePath).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        displayWeather(data);
+      });
+    } else {
+      console.log("not okay");
+    }
+  });
+};
+
+const displayWeather = function (report) {
+  const list = report.list;
+  // code for current weather
+  const header = `${report.city.name} (${getDate(list[0].dt_text)}) ${list[0].weather[0].icon}`;
+  cityDetails[0].textContent = header;
+  // code for next five days - EXAMPLE only has 4!
+};
+
+// takes dt_text and converts to mm/dd/yyyy
+const getDate = function (date) {
+
 }
 
-// used for five day section
-function createForecast() {}
-
-function getWeather(lat, lon) {
-  const requestUrl = `https://api.openweathermap.org/data/2.5/forecast?lat={${lat}}&lon={${lon}}&appid={f4e517e38960c65a47458e06fd53538a}`;
-
-  fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
-}
-
-getWeather(1, 1);
+getApiWeather(1, 1);
 
 // all of my functions will use the example JSON until my connection to the API is solved
 // If it isn't, it will be submit like this.

@@ -16,12 +16,12 @@ ul {
 
 button {
     background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 hr {
@@ -94,8 +94,8 @@ hr {
 .city-section {
     width: 70%;
     height: 500px;
-    margin-left: 10vh;
-    
+    margin-left: 1vh;
+
 }
 
 .city-today {
@@ -104,7 +104,7 @@ hr {
     border-width: 2px;
 }
 
-.city-today > * {
+.city-today>* {
     margin: 1vh;
 }
 
@@ -126,3 +126,27 @@ hr {
     height: 100%;
 }
 
+.city-forecast {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.city-forecast>h3 {
+    flex-basis: 100%;
+}
+
+.weather-box {
+    background-color: #220061;
+    width: 25vh;
+    height: 30vh;
+    margin: 1vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+}
