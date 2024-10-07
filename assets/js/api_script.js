@@ -10,6 +10,8 @@ const historyArray = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
 
+const key = 'f4e517e38960c65a47458e06fd53538a';
+
 searchButton.addEventListener("click", function () {
   console.log(searchInput.value);
   storeLocalData(searchInput.value, 5); // limit of 5 words in storage at a time
@@ -31,7 +33,7 @@ function storeLocalData(content, limit) {
 
 const getApiWeather = function (lat, lon) {
   // IF API KEY ACTUALLY WORKED
-  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat={${lat}}&lon={${lon}}&appid={f4e517e38960c65a47458e06fd53538a}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat={${lat}}&lon={${lon}}&appid={${key}}`;
   // fetch(apiUrl).then(function (response) {
   //   if (response.ok) {
   //     response.json().then(function (data) {
