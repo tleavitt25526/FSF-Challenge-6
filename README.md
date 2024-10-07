@@ -19,7 +19,7 @@ none
 
 ## Usage
 
-Open the url: {} to use the website
+Open the url: [{}](https://tleavitt25526.github.io/FSF-Challenge-6/) to use the website
 
 ## Contributing
 
