@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API</title>
+    <link rel="stylesheet" href="./assets/css/jass.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="purple-gradient center">Weather Dashboard</h1>
+    </header>
+    <section class="format">
+      <div class="search-section">
+        <div class="search-bar">
+          <h2>Search for a City:</h2>
+          <input type="text" id="city" name="city" value="Enter City">
+          <button id="search-button">Search</button>
+          <hr>
+        </div>
+        <div class="search-history">
+          <ul id="history-ul">
+            <li><button class="city-button">City 1</button></li>
+            <li><button class="city-button">City 2</button></li>
+            <li><button class="city-button">City 2</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="city-section">
+        <div class="city-today">
+          <h2>City (Details)</h2>
+        </div>
+        <div class="city-forecast">
+          <h3>5-Day Forecast</h3>
+        </div>
+      </div>
+    </section>
+
+    <script src="./assets/js/api_script.js"></script>
+  </body>
+</html>
