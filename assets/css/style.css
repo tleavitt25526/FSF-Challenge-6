@@ -4,6 +4,16 @@ header h1 {
     height: 10vh;
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 button {
     background: none;
 	color: inherit;
@@ -85,16 +95,17 @@ hr {
     width: 70%;
     height: 500px;
     margin-left: 10vh;
+    
 }
 
-.search-history ul {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: start;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.city-today {
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.city-today > * {
+    margin: 1vh;
 }
 
 .search-history ul li {
@@ -114,3 +125,4 @@ hr {
     width: 100%;
     height: 100%;
 }
+
